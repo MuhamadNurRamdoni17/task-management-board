@@ -1,73 +1,78 @@
-# React + TypeScript + Vite
+# Adhiasindo Frontend Test - CRUD Task Management Board
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Profil
+- Nama: Muhamad Nur Ramdoni
+- Role: Frontend
 
-Currently, two official plugins are available:
+## Deskripsi Project
+Aplikasi ini adalah implementasi frontend untuk kebutuhan test Adhiasindo berupa Task Management Board (Kanban) berbasis React. Aplikasi menampilkan beberapa kolom board dan mendukung pengelolaan task secara penuh dari sisi frontend tanpa backend.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech Stack
+- React
+- TypeScript
+- Vite
+- CSS
+- Local Storage
 
-## React Compiler
+## Fitur Utama
+1. Board dan Column
+- Kolom task: To Do, Doing, Review, Done, Rework.
+- Task bisa dipindahkan antar kolom dengan drag and drop.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+2. Task Card
+- Menampilkan judul, deskripsi, assignee, due date, label, priority, checklist, attachments.
+- Mendukung cover image (opsional).
 
-## Expanding the ESLint configuration
+3. CRUD Task
+- Create task baru.
+- Read task dalam bentuk card dan detail panel.
+- Update task melalui form modal.
+- Delete task dari card, modal, atau detail panel.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+4. Filtering dan Searching
+- Search task berdasarkan teks.
+- Filter berdasarkan assignee, label, dan due date.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+5. Checklist Subtask
+- Tambah dan tampilkan subtask.
+- Centang/uncentang checklist.
+- Progress bar otomatis mengikuti progress checklist.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+6. Notifikasi dan Interaksi UI
+- Toast notification saat create, update, delete, dan move task.
+- Hover effect, transisi halus, animasi card dan modal.
+- Statistik per kolom dengan indikator progress.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+7. Assignee Dinamis
+- Bisa menambahkan assignee baru langsung dari form task.
+- Data assignee dan task tersimpan di localStorage.
+
+8. Theme Toggle
+- Mendukung mode light/dark melalui tombol toggle di header.
+
+## Penyimpanan Data
+Seluruh data task dan assignee disimpan di browser menggunakan localStorage sehingga tetap ada setelah refresh.
+
+## Cara Menjalankan Project
+1. Install dependency
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2. Jalankan mode development
+```bash
+npm run dev
 ```
+
+3. Build production
+```bash
+npm run build
+```
+
+4. Preview hasil build
+```bash
+npm run preview
+```
+
+## Catatan
+Project ini berfokus pada implementasi frontend sesuai requirement test. Tidak menggunakan backend/API.
