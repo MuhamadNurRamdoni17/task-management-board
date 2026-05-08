@@ -349,8 +349,8 @@ function App() {
     [filteredTasks],
   )
 
-  const totalTasks = filteredTasks.length
-  const completedTasks = filteredTasks.filter((task) => task.columnId === 'done').length
+  const totalTasks = tasks.length
+  const completedTasks = tasks.filter((task) => task.columnId === 'done').length
   const completionPercentage = totalTasks === 0 ? 0 : Math.round((completedTasks / totalTasks) * 100)
   const activeUsers = team.slice(0, 4)
   const profileName = 'Muhamad Nur Ramdoni'
