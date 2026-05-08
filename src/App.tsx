@@ -353,6 +353,8 @@ function App() {
   const completedTasks = filteredTasks.filter((task) => task.columnId === 'done').length
   const completionPercentage = totalTasks === 0 ? 0 : Math.round((completedTasks / totalTasks) * 100)
   const activeUsers = team.slice(0, 4)
+  const profileName = 'Muhamad Nur Ramdoni'
+  const profileRole = 'Frontend'
 
   const showToast = (kind: Toast['kind'], message: string) => {
     setToasts((current) => [...current, { id: crypto.randomUUID(), kind, message }])
@@ -543,10 +545,10 @@ function App() {
             </button>
 
             <div className="profile-chip">
-              <span className="profile-avatar">{initials('Doni')}</span>
+              <span className="profile-avatar">{initials(profileName)}</span>
               <div>
-                <strong>Doni</strong>
-                <span>Programmer</span>
+                <strong>{profileName}</strong>
+                <span>{profileRole}</span>
               </div>
             </div>
           </div>
